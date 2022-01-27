@@ -1,0 +1,165 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://sprites/robot-1/hand/hand.png" type="Texture" id=1]
+[ext_resource path="res://character/hand.gd" type="Script" id=2]
+[ext_resource path="res://sprites/robot-1/main.png" type="Texture" id=3]
+[ext_resource path="res://character/character.gd" type="Script" id=4]
+[ext_resource path="res://character/body.gd" type="Script" id=5]
+[ext_resource path="res://sprites/punch.png" type="Texture" id=6]
+[ext_resource path="res://sprites/grip.png" type="Texture" id=7]
+[ext_resource path="res://sprites/grab.png" type="Texture" id=8]
+[ext_resource path="res://character/Controller.gd" type="Script" id=9]
+[ext_resource path="res://sprites/red-body.png" type="Texture" id=10]
+[ext_resource path="res://character/AI.gd" type="Script" id=11]
+[ext_resource path="res://sprites/heart.png" type="Texture" id=12]
+[ext_resource path="res://sprites/robot-1/color.png" type="Texture" id=13]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 46.0109
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 16.6596
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "punch",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "grab",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "grab_grip",
+"speed": 0.0
+} ]
+
+[node name="baj" type="Node2D" groups=[
+"character",
+]]
+script = ExtResource( 4 )
+
+[node name="AI" type="Node" parent="."]
+script = ExtResource( 11 )
+
+[node name="Controller" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="body" type="RigidBody2D" parent="."]
+collision_mask = 5
+mass = 20.0
+physics_material_override = SubResource( 1 )
+gravity_scale = 16.0
+contacts_reported = 1
+contact_monitor = true
+applied_force = Vector2( 0, -50 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
+scale = Vector2( 1.11281, 1.11281 )
+shape = SubResource( 2 )
+
+[node name="g" type="Node2D" parent="body"]
+
+[node name="UI" type="HBoxContainer" parent="body/g"]
+margin_left = -70.4848
+margin_top = -92.4881
+margin_right = 71.5152
+margin_bottom = -52.4881
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="body/g/UI"]
+visible = false
+margin_left = 17.0
+margin_top = 13.0
+margin_right = 25.0
+margin_bottom = 27.0
+text = "9"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="body/g/UI/Label"]
+position = Vector2( 4.16222, 6.54063 )
+scale = Vector2( 0.780807, 0.780807 )
+texture = ExtResource( 12 )
+
+[node name="name" type="Label" parent="body/g/UI"]
+margin_left = 26.0
+margin_top = 13.0
+margin_right = 115.0
+margin_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "defaultfrog #7"
+align = 1
+valign = 1
+percent_visible = 2.30769
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteColor" type="Sprite" parent="body/g"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -0.00781238, 0 )
+rotation = 0.0875133
+scale = Vector2( 0.174411, 0.174411 )
+texture = ExtResource( 13 )
+normal_map = ExtResource( 13 )
+offset = Vector2( 64.8071, 201.341 )
+
+[node name="Sprite" type="Sprite" parent="body/g"]
+position = Vector2( -4.76837e-07, 0.015625 )
+rotation = 0.0881677
+scale = Vector2( 0.173777, 0.173777 )
+texture = ExtResource( 3 )
+offset = Vector2( 64.8535, 201.245 )
+
+[node name="hand" type="RigidBody2D" parent="." groups=[
+"hand",
+]]
+position = Vector2( 98, 0 )
+collision_layer = 2
+collision_mask = 3
+mass = 20.0
+gravity_scale = 0.0
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hand"]
+position = Vector2( 0.237129, 0 )
+scale = Vector2( 1.6504, 1.6504 )
+shape = SubResource( 3 )
+
+[node name="g" type="Node2D" parent="hand"]
+
+[node name="Sprite" type="AnimatedSprite" parent="hand/g"]
+position = Vector2( -2.28198, 0.644315 )
+scale = Vector2( 0.141054, 0.141054 )
+frames = SubResource( 4 )
+animation = "punch"
+frame = 1
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true
+
+[node name="test" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1.12246, 100.46 )
+scale = Vector2( 0.0908057, 0.0851934 )
+texture = ExtResource( 10 )
+
+[connection signal="body_entered" from="body" to="." method="_on_body_body_entered"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_RespawnTimer_timeout"]

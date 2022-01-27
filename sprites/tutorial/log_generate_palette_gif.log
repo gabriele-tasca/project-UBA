@@ -1,0 +1,101 @@
+ffmpeg version 4.3.2-0+deb11u2 Copyright (c) 2000-2021 the FFmpeg developers
+  built with gcc 10 (Debian 10.2.1-6)
+  configuration: --prefix=/usr --extra-version=0+deb11u2 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
+  libavutil      56. 51.100 / 56. 51.100
+  libavcodec     58. 91.100 / 58. 91.100
+  libavformat    58. 45.100 / 58. 45.100
+  libavdevice    58. 10.100 / 58. 10.100
+  libavfilter     7. 85.100 /  7. 85.100
+  libavresample   4.  0.  0 /  4.  0.  0
+  libswscale      5.  7.100 /  5.  7.100
+  libswresample   3.  7.100 /  3.  7.100
+  libpostproc    55.  7.100 / 55.  7.100
+Splitting the commandline.
+Reading option '-v' ... matched as option 'v' (set logging level) with argument 'debug'.
+Reading option '-nostdin' ... matched as option 'stdin' (enable or disable interaction on standard input) with argument 0.
+Reading option '-progress' ... matched as option 'progress' (write program-readable progress information) with argument '/tmp/KritaFFmpegProgress.oinvNH'.
+Reading option '-r' ... matched as option 'r' (set frame rate (Hz value, fraction or abbreviation)) with argument '4'.
+Reading option '-start_number' ... matched as AVOption 'start_number' with argument '0'.
+Reading option '-i' ... matched as input url with argument '/home/gaboloth/prj/godot/UBA/sprites/tutorial/impact%04d.png'.
+Reading option '-vf' ... matched as option 'vf' (set video filters) with argument 'palettegen'.
+Reading option '-y' ... matched as option 'y' (overwrite output files) with argument '1'.
+Reading option '/home/gaboloth/prj/godot/UBA/sprites/tutorial/palette.png' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option v (set logging level) with argument debug.
+Applying option nostdin (enable or disable interaction on standard input) with argument 0.
+Applying option progress (write program-readable progress information) with argument /tmp/KritaFFmpegProgress.oinvNH.
+[file @ 0x560bf01f3580] Setting default whitelist 'file,crypto,data'
+Applying option y (overwrite output files) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url /home/gaboloth/prj/godot/UBA/sprites/tutorial/impact%04d.png.
+Applying option r (set frame rate (Hz value, fraction or abbreviation)) with argument 4.
+Successfully parsed a group of options.
+Opening an input file: /home/gaboloth/prj/godot/UBA/sprites/tutorial/impact%04d.png.
+[image2 @ 0x560bf01f3a40] Opening '/home/gaboloth/prj/godot/UBA/sprites/tutorial/impact0000.png' for reading
+[file @ 0x560bf01f8900] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 0x560bf0200bc0] Statistics: 53015 bytes read, 0 seeks
+[image2 @ 0x560bf01f3a40] Opening '/home/gaboloth/prj/godot/UBA/sprites/tutorial/impact0001.png' for reading
+[file @ 0x560bf01f8e40] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 0x560bf01f9140] Statistics: 49826 bytes read, 0 seeks
+Input #0, image2, from '/home/gaboloth/prj/godot/UBA/sprites/tutorial/impact%04d.png':
+  Duration: 00:00:00.08, start: 0.000000, bitrate: N/A
+    Stream #0:0, 2, 1/25: Video: png, 1 reference frame, rgba(pc), 1057x896 [SAR 3937:3937 DAR 151:128], 0/1, 25 tbr, 25 tbn, 25 tbc
+Successfully opened the file.
+Parsing a group of options: output url /home/gaboloth/prj/godot/UBA/sprites/tutorial/palette.png.
+Applying option vf (set video filters) with argument palettegen.
+Successfully parsed a group of options.
+Opening an output file: /home/gaboloth/prj/godot/UBA/sprites/tutorial/palette.png.
+Successfully opened the file.
+detected 8 logical cores
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> png (native))
+cur_dts is invalid st:0 (0) [init:0 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+    Last message repeated 2 times
+[graph 0 input from stream 0:0 @ 0x560bf02ac8c0] Setting 'video_size' to value '1057x896'
+[graph 0 input from stream 0:0 @ 0x560bf02ac8c0] Setting 'pix_fmt' to value '26'
+[graph 0 input from stream 0:0 @ 0x560bf02ac8c0] Setting 'time_base' to value '1/4'
+[graph 0 input from stream 0:0 @ 0x560bf02ac8c0] Setting 'pixel_aspect' to value '3937/3937'
+[graph 0 input from stream 0:0 @ 0x560bf02ac8c0] Setting 'frame_rate' to value '4/1'
+[graph 0 input from stream 0:0 @ 0x560bf02ac8c0] w:1057 h:896 pixfmt:rgba tb:1/4 fr:4/1 sar:3937/3937
+[format @ 0x560bf02ad300] Setting 'pix_fmts' to value 'rgb24|rgba|rgb48be|rgba64be|pal8|gray|ya8|gray16be|ya16be|monob'
+[auto_scaler_0 @ 0x560bf02af100] Setting 'flags' to value 'bicubic'
+[auto_scaler_0 @ 0x560bf02af100] w:iw h:ih flags:'bicubic' interl:0
+[Parsed_palettegen_0 @ 0x560bf022a700] auto-inserting filter 'auto_scaler_0' between the filter 'graph 0 input from stream 0:0' and the filter 'Parsed_palettegen_0'
+[auto_scaler_1 @ 0x560bf02b1640] Setting 'flags' to value 'bicubic'
+[auto_scaler_1 @ 0x560bf02b1640] w:iw h:ih flags:'bicubic' interl:0
+[format @ 0x560bf02ad300] auto-inserting filter 'auto_scaler_1' between the filter 'Parsed_palettegen_0' and the filter 'format'
+[AVFilterGraph @ 0x560bf01ff840] query_formats: 4 queried, 1 merged, 2 already done, 0 delayed
+[auto_scaler_1 @ 0x560bf02b1640] picking rgba out of 10 ref:bgra alpha:1
+[swscaler @ 0x560bf02b2b40] Forcing full internal H chroma due to odd output size
+[swscaler @ 0x560bf02b2b40] Forcing full internal H chroma due to input having non subsampled chroma
+[auto_scaler_0 @ 0x560bf02af100] w:1057 h:896 fmt:rgba sar:3937/3937 -> w:1057 h:896 fmt:bgra sar:1/1 flags:0x4
+[swscaler @ 0x560bf02d6580] Forcing full internal H chroma due to input having non subsampled chroma
+[auto_scaler_1 @ 0x560bf02b1640] w:16 h:16 fmt:bgra sar:1/1 -> w:16 h:16 fmt:rgba sar:1/1 flags:0x4
+Output #0, image2, to '/home/gaboloth/prj/godot/UBA/sprites/tutorial/palette.png':
+  Metadata:
+    encoder         : Lavf58.45.100
+    Stream #0:0, 0, 1/4: Video: png, 1 reference frame, rgba, 16x16 [SAR 1:1 DAR 1:1], 0/1, q=2-31, 200 kb/s, 4 fps, 4 tbn, 4 tbc
+    Metadata:
+      encoder         : Lavc58.91.100 png
+cur_dts is invalid st:0 (0) [init:1 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+    Last message repeated 1 times
+[Parsed_palettegen_0 @ 0x560bf022a700] 255(+1) colors generated out of 256 colors; ratio=0.996094
+cur_dts is invalid st:0 (0) [init:1 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+Clipping frame in rate conversion by 0.000008
+cur_dts is invalid st:0 (0) [init:1 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+[out_0_0 @ 0x560bf02acf40] EOF on sink link out_0_0:default.
+No more output streams to write to, finishing.
+[image2 @ 0x560bf01f9d00] Opening '/home/gaboloth/prj/godot/UBA/sprites/tutorial/palette.png' for writing
+[file @ 0x560bf08f14c0] Setting default whitelist 'file,crypto,data'
+[AVIOContext @ 0x560bf0931640] Statistics: 0 seeks, 1 writeouts
+frame=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.25 bitrate=N/A speed=7.33x    
+[AVIOContext @ 0x560bf01f38c0] Statistics: 0 seeks, 1 writeouts
+video:1kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+Input file #0 (/home/gaboloth/prj/godot/UBA/sprites/tutorial/impact%04d.png):
+  Input stream #0:0 (video): 2 packets read (102841 bytes); 2 frames decoded; 
+  Total: 2 packets (102841 bytes) demuxed
+Output file #0 (/home/gaboloth/prj/godot/UBA/sprites/tutorial/palette.png):
+  Output stream #0:0 (video): 1 frames encoded; 1 packets muxed (1032 bytes); 
+  Total: 1 packets (1032 bytes) muxed
+2 frames successfully decoded, 0 decoding errors

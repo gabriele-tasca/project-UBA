@@ -1,0 +1,490 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://UI/navigation_button.gd" type="Script" id=1]
+[ext_resource path="res://UI/UI-main.gd" type="Script" id=2]
+[ext_resource path="res://UI/OptionButton.gd" type="Script" id=3]
+[ext_resource path="res://UI/cursor-opt-button.gd" type="Script" id=4]
+[ext_resource path="res://UI/white-icon.png" type="Texture" id=5]
+[ext_resource path="res://UI/PanelContainer.gd" type="Script" id=6]
+
+[sub_resource type="ButtonGroup" id=1]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="UI_main" type="MarginContainer" parent="." groups=[
+"UI_main",
+]]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -499.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="root_vbox" type="VBoxContainer" parent="UI_main"]
+visible = false
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 479.0
+margin_bottom = 1060.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="online_button" type="Button" parent="UI_main/root_vbox"]
+margin_top = 360.0
+margin_right = 459.0
+margin_bottom = 380.0
+text = "PLAY ONLINE"
+script = ExtResource( 1 )
+child_menu = NodePath("../../online_vbox2")
+
+[node name="training_button" type="Button" parent="UI_main/root_vbox"]
+margin_top = 420.0
+margin_right = 459.0
+margin_bottom = 440.0
+text = "TRAINING"
+
+[node name="tutorial_button" type="Button" parent="UI_main/root_vbox"]
+margin_top = 480.0
+margin_right = 459.0
+margin_bottom = 500.0
+text = "SHOW TUTORIAL"
+
+[node name="customize_button" type="Button" parent="UI_main/root_vbox"]
+margin_top = 540.0
+margin_right = 459.0
+margin_bottom = 560.0
+text = "CUSTOMIZE"
+script = ExtResource( 1 )
+child_menu = NodePath("../../customize_vbox")
+
+[node name="options_button" type="Button" parent="UI_main/root_vbox"]
+margin_top = 600.0
+margin_right = 459.0
+margin_bottom = 620.0
+text = "OPTIONS"
+script = ExtResource( 1 )
+child_menu = NodePath("../../options_vbox")
+
+[node name="quit_button" type="Button" parent="UI_main/root_vbox"]
+margin_top = 660.0
+margin_right = 459.0
+margin_bottom = 680.0
+text = "QUIT"
+
+[node name="online_vbox2" type="VBoxContainer" parent="UI_main"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 479.0
+margin_bottom = 1060.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UI_main/online_vbox2"]
+margin_top = 387.0
+margin_right = 459.0
+margin_bottom = 470.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_main/online_vbox2/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 452.0
+margin_bottom = 76.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 5
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_main/online_vbox2/PanelContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 425.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="UI_main/online_vbox2/PanelContainer/MarginContainer/VBoxContainer"]
+margin_right = 405.0
+margin_bottom = 31.0
+text = "CREATE ROOM
+"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_main/online_vbox2/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 35.0
+margin_right = 405.0
+margin_bottom = 59.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Label2" type="Label" parent="UI_main/online_vbox2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 5.0
+margin_right = 81.0
+margin_bottom = 19.0
+text = "max players:"
+align = 3
+
+[node name="max_players_spinbox" type="SpinBox" parent="UI_main/online_vbox2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 101.0
+margin_right = 327.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+max_value = 99.0
+value = 99.0
+align = 1
+
+[node name="create_button" type="Button" parent="UI_main/online_vbox2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 347.0
+margin_right = 405.0
+margin_bottom = 24.0
+text = "CREATE"
+
+[node name="PanelContainer2" type="PanelContainer" parent="UI_main/online_vbox2"]
+margin_top = 510.0
+margin_right = 459.0
+margin_bottom = 593.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_main/online_vbox2/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 452.0
+margin_bottom = 76.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 5
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_main/online_vbox2/PanelContainer2/MarginContainer"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 425.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="UI_main/online_vbox2/PanelContainer2/MarginContainer/VBoxContainer"]
+margin_right = 405.0
+margin_bottom = 31.0
+text = "JOIN ROOM
+"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_main/online_vbox2/PanelContainer2/MarginContainer/VBoxContainer"]
+margin_top = 35.0
+margin_right = 405.0
+margin_bottom = 59.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Label2" type="Label" parent="UI_main/online_vbox2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 5.0
+margin_right = 73.0
+margin_bottom = 19.0
+text = "room code:"
+align = 3
+
+[node name="room_code" type="LineEdit" parent="UI_main/online_vbox2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 93.0
+margin_right = 328.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+align = 1
+placeholder_text = "enter                        "
+
+[node name="join_button" type="Button" parent="UI_main/online_vbox2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 348.0
+margin_right = 405.0
+margin_bottom = 24.0
+text = "  JOIN  "
+
+[node name="back_button2" type="Button" parent="UI_main/online_vbox2"]
+margin_top = 633.0
+margin_right = 459.0
+margin_bottom = 653.0
+text = "RETURN"
+
+[node name="customize_vbox" type="VBoxContainer" parent="UI_main"]
+visible = false
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 479.0
+margin_bottom = 1060.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UI_main/customize_vbox"]
+margin_top = 159.0
+margin_right = 459.0
+margin_bottom = 821.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_main/customize_vbox/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 452.0
+margin_bottom = 655.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_main/customize_vbox/PanelContainer/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 435.0
+margin_bottom = 638.0
+custom_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer"]
+margin_right = 425.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 425.0
+margin_bottom = 14.0
+text = "NAME:"
+align = 1
+
+[node name="Name" type="LineEdit" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 425.0
+margin_bottom = 42.0
+align = 1
+placeholder_text = "Enter name"
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 62.0
+margin_right = 425.0
+margin_bottom = 146.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 36.0
+margin_right = 187.0
+margin_bottom = 84.0
+script = ExtResource( 6 )
+id = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 144.0
+margin_bottom = 77.0
+mouse_filter = 2
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 127.0
+margin_bottom = 60.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+margin_top = 18.0
+margin_right = 57.0
+margin_bottom = 32.0
+text = "COLOR 1"
+align = 1
+
+[node name="TextureRectColor" type="TextureRect" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+margin_left = 67.0
+margin_right = 117.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="PanelContainer2" type="PanelContainer" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 237.0
+margin_right = 388.0
+margin_bottom = 84.0
+script = ExtResource( 6 )
+id = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 144.0
+margin_bottom = 77.0
+mouse_filter = 2
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 127.0
+margin_bottom = 60.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/MarginContainer/HBoxContainer"]
+margin_top = 18.0
+margin_right = 57.0
+margin_bottom = 32.0
+text = "COLOR 2"
+align = 1
+
+[node name="TextureRectColor2" type="TextureRect" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/MarginContainer/HBoxContainer"]
+margin_left = 67.0
+margin_right = 117.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="ColorPicker" type="ColorPicker" parent="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer"]
+margin_left = 4.0
+margin_top = 170.0
+margin_right = 429.0
+margin_bottom = 632.0
+
+[node name="back_button3" type="Button" parent="UI_main/customize_vbox"]
+margin_top = 861.0
+margin_right = 459.0
+margin_bottom = 881.0
+text = "RETURN"
+
+[node name="training_vbox" type="VBoxContainer" parent="UI_main"]
+visible = false
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 479.0
+margin_bottom = 1060.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="Name" type="LineEdit" parent="UI_main/training_vbox"]
+margin_top = 27.0
+margin_right = 339.0
+margin_bottom = 51.0
+placeholder_text = "Enter name"
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPicker" type="ColorPicker" parent="UI_main/training_vbox"]
+margin_left = 92.0
+margin_top = 183.0
+margin_right = 431.0
+margin_bottom = 645.0
+
+[node name="back_button3" type="Button" parent="UI_main/training_vbox"]
+margin_top = 593.0
+margin_right = 339.0
+margin_bottom = 613.0
+text = "RETURN"
+
+[node name="options_vbox" type="VBoxContainer" parent="UI_main"]
+visible = false
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 479.0
+margin_bottom = 1060.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="UI_main/options_vbox"]
+margin_top = 448.0
+margin_right = 459.0
+margin_bottom = 532.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI_main/options_vbox/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 452.0
+margin_bottom = 77.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 5
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_main/options_vbox/PanelContainer2/MarginContainer"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 425.0
+margin_bottom = 65.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_main/options_vbox/PanelContainer2/MarginContainer/HBoxContainer"]
+margin_left = 91.0
+margin_right = 244.0
+margin_bottom = 60.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="UI_main/options_vbox/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 6.0
+margin_right = 153.0
+margin_bottom = 20.0
+text = "MATCHMAKING SERVER:"
+
+[node name="Label2" type="Label" parent="UI_main/options_vbox/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 153.0
+margin_bottom = 54.0
+text = "CURSOR:"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI_main/options_vbox/PanelContainer2/MarginContainer/HBoxContainer"]
+margin_left = 294.0
+margin_right = 323.0
+margin_bottom = 60.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="UI_main/options_vbox/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 29.0
+margin_bottom = 20.0
+group = SubResource( 1 )
+align = 1
+script = ExtResource( 3 )
+
+[node name="OptionButton2" type="OptionButton" parent="UI_main/options_vbox/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 40.0
+margin_right = 29.0
+margin_bottom = 60.0
+group = SubResource( 1 )
+align = 1
+script = ExtResource( 4 )
+
+[node name="back_button2" type="Button" parent="UI_main/options_vbox"]
+margin_top = 572.0
+margin_right = 459.0
+margin_bottom = 592.0
+text = "RETURN"
+
+[connection signal="pressed" from="UI_main/root_vbox/training_button" to="UI_main" method="_on_training_button_pressed"]
+[connection signal="pressed" from="UI_main/root_vbox/tutorial_button" to="UI_main" method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="UI_main/root_vbox/quit_button" to="UI_main" method="_on_quit_button_pressed"]
+[connection signal="changed" from="UI_main/online_vbox2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/max_players_spinbox" to="UI_main" method="_on_max_players_spinbox_changed"]
+[connection signal="value_changed" from="UI_main/online_vbox2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/max_players_spinbox" to="UI_main" method="_on_max_players_spinbox_value_changed"]
+[connection signal="pressed" from="UI_main/online_vbox2/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/create_button" to="UI_main" method="_on_create_button_pressed"]
+[connection signal="text_changed" from="UI_main/online_vbox2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/room_code" to="UI_main" method="_on_room_code_text_changed"]
+[connection signal="pressed" from="UI_main/online_vbox2/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer/join_button" to="UI_main" method="_on_join_button_pressed"]
+[connection signal="pressed" from="UI_main/online_vbox2/back_button2" to="UI_main" method="_on_back_button_pressed"]
+[connection signal="text_changed" from="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Name" to="UI_main" method="_on_Name_text_changed"]
+[connection signal="focus_entered" from="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer" to="UI_main" method="_on_PanelContainer_focus_entered"]
+[connection signal="focus_exited" from="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer" to="UI_main" method="_on_PanelContainer_focus_exited"]
+[connection signal="color_changed" from="UI_main/customize_vbox/PanelContainer/MarginContainer/VBoxContainer/ColorPicker" to="UI_main" method="_on_ColorPicker_color_changed"]
+[connection signal="pressed" from="UI_main/customize_vbox/back_button3" to="UI_main" method="_on_back_button_pressed"]
+[connection signal="text_changed" from="UI_main/training_vbox/Name" to="UI_main" method="_on_Name_text_changed"]
+[connection signal="color_changed" from="UI_main/training_vbox/ColorPicker" to="UI_main" method="_on_ColorPicker_color_changed"]
+[connection signal="pressed" from="UI_main/training_vbox/back_button3" to="UI_main" method="_on_back_button_pressed"]
+[connection signal="item_selected" from="UI_main/options_vbox/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer2/OptionButton" to="UI_main/options_vbox/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer2/OptionButton" method="_on_OptionButton_item_selected"]
+[connection signal="item_selected" from="UI_main/options_vbox/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer2/OptionButton2" to="UI_main/options_vbox/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer2/OptionButton2" method="_on_OptionButton_item_selected"]
+[connection signal="pressed" from="UI_main/options_vbox/back_button2" to="UI_main" method="_on_back_button_pressed"]
